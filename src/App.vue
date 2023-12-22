@@ -1,9 +1,26 @@
 <template>
-  <div></div>
+  <div class="flex">
+    <SideBar />
+    <main class="flex-1">
+      <RouterView />
+    </main>
+  </div>
 </template>
 
 <script>
-export default {};
+import SideBar from "@/components/SideBar.vue";
+
+export default {
+  components: { SideBar },
+};
 </script>
 
-<style lang="scss" scoped></style>
+<style>
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #ebebeb;
+}
+</style>
