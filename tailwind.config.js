@@ -5,11 +5,13 @@ export default {
     extend: {
       colors: {
         text: "#1b0d13",
-        background: "#fdedf5 ",
+        background: "#efe1dd ",
         primary: "#e21b70",
-        secondary: "#fdedf5",
+        secondary: "#d7a4ba",
         accent: "#f87d8a",
         light: "#EBEBEB",
+        borderColor: "#d0779d",
+        icon: "#e0af54",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],

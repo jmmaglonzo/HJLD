@@ -1,6 +1,6 @@
 <template>
   <aside
-    class="bg-primary text-background min-h-screen flex flex-col duration-300 ease-in-out overflow-hidden border-r shadow-lg p-0.5 items-start"
+    class="bg-primary text-background min-h-screen flex flex-col duration-300 ease-in-out overflow-hidden border-r shadow-lg p-0.5"
     :class="sideBarWidth"
   >
     <span @click="openMenu" class="absolute bottom-0 p-2 md:block hidden">
@@ -10,7 +10,7 @@
         class="h-8 w-8 duration-300 ease-in-out cursor-pointer"
       />
     </span>
-    <nav class="flex flex-col mt-20 gap-8">
+    <nav class="flex flex-col md:space-y-6 space-y-16 mt-20">
       <div class="flex flex-col gap-6">
         <RouterLink :to="{ name: 'Home' }" class="flex items-center gap-4">
           <Icon icon="ic:sharp-home" class="h-10 w-10 shrink-0" />
