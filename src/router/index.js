@@ -1,30 +1,31 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "@/views/Home.vue";
-import Services from "@/views/Services.vue";
-import Works from "@/views/Works.vue";
-import Reviews from "@/views/Reviews.vue";
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       name: "Home",
       path: "/",
-      component: Home,
+      component: () =>
+        import(/* webpackChunkName: "home" */ "@/views/Home.vue"),
     },
     {
       name: "Services",
       path: "/Services",
-      component: Services,
+      component: () =>
+        import(/* webpackChunkName: "services" */ "@/views/Services.vue"),
     },
     {
       name: "Works",
       path: "/Works",
-      component: Works,
+      component: () =>
+        import(/* webpackChunkName: "works" */ "@/views/Works.vue"),
     },
     {
       name: "Reviews",
       path: "/Reviews",
-      component: Reviews,
+      component: () =>
+        import(/* webpackChunkName: "reviews" */ "@/views/Reviews.vue"),
     },
   ],
   linkExactActiveClass: "border-white border-b-4",

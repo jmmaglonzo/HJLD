@@ -14,7 +14,7 @@ export default {
     return {
       images: [
         "/works/invitation 1.png",
-        "/works/tarp2.jpeg",
+        "/works/tarp2.jpg",
         "/works/notebook cover 1.png",
         "/works/tarp3.png",
         "/works/nametag.png",
