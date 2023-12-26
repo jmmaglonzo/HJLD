@@ -1,16 +1,16 @@
 <template>
   <aside
-    class="bg-primary text-background min-h-screen flex flex-col duration-300 ease-in-out overflow-hidden border-r shadow-lg p-0.5"
+    class="flex min-h-screen flex-col overflow-hidden border-r bg-primary p-0.5 text-background shadow-lg duration-300 ease-in-out"
     :class="sideBarWidth"
   >
-    <span @click="openMenu" class="absolute bottom-0 p-2 md:block hidden">
+    <span @click="openMenu" class="absolute bottom-0 hidden p-2 md:block">
       <Icon
         icon="heroicons-solid:chevron-double-left"
         :class="iconRotate"
-        class="h-8 w-8 duration-300 ease-in-out cursor-pointer"
+        class="h-8 w-8 cursor-pointer duration-300 ease-in-out"
       />
     </span>
-    <nav class="flex flex-col md:space-y-6 space-y-16 mt-20">
+    <nav class="mt-20 flex flex-col space-y-16 md:space-y-6">
       <div class="flex flex-col gap-6">
         <RouterLink :to="{ name: 'Home' }" class="flex items-center gap-4">
           <Icon icon="ic:sharp-home" class="h-10 w-10 shrink-0" />

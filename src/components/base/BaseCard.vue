@@ -1,9 +1,10 @@
 <template>
   <div
-    class="p-4 space-y-2 bg-secondary shadow-md rounded-md md:hover:scale-105 duration-200 md:text-start text-center md:text-sm text-xs border-8 border-borderColor"
+    class="overflow-hidden rounded-md border-8 border-borderColor bg-secondary duration-200 hover:scale-110"
   >
+    <slot></slot>
     <div
-      class="flex items-center gap-2 justify-center uppercase text-pink-900 text-sm font-semibold"
+      class="flex items-center justify-center gap-2 text-sm font-semibold uppercase text-pink-900"
     >
       <slot name="title" class=""></slot>
     </div>

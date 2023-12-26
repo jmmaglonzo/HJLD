@@ -27,6 +27,7 @@ const router = createRouter({
       component: Reviews,
     },
   ],
+  linkExactActiveClass: "border-white border-b-4",
 });
 
 export default router;

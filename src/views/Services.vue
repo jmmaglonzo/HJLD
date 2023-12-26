@@ -1,9 +1,11 @@
 <template>
-  <section class="container p-4 min-h-screen flex flex-col justify-center">
-    <div class="grid gap-x-4 gap-y-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      <base-card class="">
+  <section class="container flex min-h-screen flex-col justify-center p-4">
+    <div class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
+      <base-card
+        class="space-y-2 p-4 text-center text-xs shadow-md duration-200 md:text-start md:text-sm md:hover:scale-105"
+      >
         <template #title>
-          <Icon icon="clarity:design-line" class="w-7 h-7 text-primary" />
+          <Icon icon="clarity:design-line" class="h-7 w-7 text-primary" />
           <h4>LOGO DESIGN</h4>
         </template>
         <template #description>
@@ -12,11 +14,13 @@
         </template>
       </base-card>
 
-      <base-card class="">
+      <base-card
+        class="space-y-2 p-4 text-center text-xs shadow-md duration-200 md:text-start md:text-sm md:hover:scale-105"
+      >
         <template #title>
           <Icon
             icon="material-symbols:branding-watermark-outline"
-            class="w-7 h-7 text-primary"
+            class="h-7 w-7 text-primary"
           />
           <h4>branding & identity design</h4>
         </template>
@@ -27,11 +31,13 @@
         </template>
       </base-card>
 
-      <base-card class="">
+      <base-card
+        class="space-y-2 p-4 text-center text-xs shadow-md duration-200 md:text-start md:text-sm md:hover:scale-105"
+      >
         <template #title>
           <Icon
             icon="material-symbols-light:design-services-outline"
-            class="w-7 h-7 text-primary"
+            class="h-7 w-7 text-primary"
           />
           <h4>print design</h4>
         </template>
@@ -41,9 +47,11 @@
         </template>
       </base-card>
 
-      <base-card class="">
+      <base-card
+        class="space-y-2 p-4 text-center text-xs shadow-md duration-200 md:text-start md:text-sm md:hover:scale-105"
+      >
         <template #title>
-          <Icon icon="fluent-mdl2:edit-photo" class="w-7 h-7 text-primary" />
+          <Icon icon="fluent-mdl2:edit-photo" class="h-7 w-7 text-primary" />
           <h4>Photo Editing</h4>
         </template>
         <template #description>
@@ -53,9 +61,11 @@
         </template>
       </base-card>
 
-      <base-card class="md:block hidden">
+      <base-card
+        class="hidden space-y-2 p-4 text-center text-xs shadow-md duration-200 md:block md:text-start md:text-sm md:hover:scale-105"
+      >
         <template #title>
-          <Icon icon="ph:book-light" class="w-7 h-7 text-primary" />
+          <Icon icon="ph:book-light" class="h-7 w-7 text-primary" />
           <h4>book and magazine design</h4>
         </template>
         <template #description>
@@ -65,9 +75,11 @@
         </template>
       </base-card>
 
-      <base-card class="md:block hidden">
+      <base-card
+        class="hidden space-y-2 p-4 text-center text-xs shadow-md duration-200 md:block md:text-start md:text-sm md:hover:scale-105"
+      >
         <template #title>
-          <Icon icon="mdi:art" class="w-7 h-7 text-primary" />
+          <Icon icon="mdi:art" class="h-7 w-7 text-primary" />
           <h4>Event Graphics</h4>
         </template>
         <template #description>
@@ -81,7 +93,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      classes: [{}],
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>
