@@ -1,29 +1,17 @@
-# HJLD
+# HJ Layout & Designs
 
-This template should help get you started developing with Vue 3 in Vite.
+This project is a personal website created for HJ Layout & Designs, using Vue.js and Vue Router.
 
-## Recommended IDE Setup
+## Overview
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Welcome to my personal project! As a self-taught developer, I am continually exploring and honing my skills, and this project serves as a practical exercise to apply the knowledge I've gained. The goal is not only to create a functional website but also to experiment with Vue.js features and reinforce my understanding of front-end development.
 
-## Customize configuration
+## Learning Objectives
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- Apply Vue.js concepts in a real-world scenario.
+- Gain hands-on experience with Vue Router for navigation.
+- Strengthen my understanding of front-end development practices.
 
-## Project Setup
+Feel free to explore the code, provide feedback, or share insights. This project is a reflection of my learning journey as a self-taught developer, and I'm open to any suggestions or collaborations to enhance my skills further.
 
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+![HJLD](/src/assets/img/Screenshot%202023-12-26%20114437.png)
