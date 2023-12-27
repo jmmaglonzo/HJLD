@@ -5,15 +5,18 @@
         <img src="../assets/img/img-hero.png" alt="" />
       </div>
       <div class="md:order2 order-1 space-y-2 py-12 md:w-1/2">
-        <div class="text-center md:text-start">
-          <span class="text-2xl text-primary md:text-3xl">Hello</span>
+        <div class="text-center md:text-start"></div>
+        <div class="flex items-center justify-center gap-2 md:justify-normal">
+          <span class="text-2xl font-bold uppercase text-accent md:text-4xl"
+            >i'm</span
+          >
+          <VueWriter
+            :array="typedText"
+            :typeSpeed="60"
+            :eraseSpeed="40"
+            class="text-4xl font-bold uppercase text-accent md:text-5xl"
+          />
         </div>
-        <h1
-          class="text-center text-4xl font-extrabold uppercase text-accent md:text-left md:text-5xl"
-        >
-          I'M
-          {{ typedText }}
-        </h1>
 
         <p class="text-center text-base leading-relaxed md:text-start">
           Welcome to my creative world where I wear multiple hats: artist,
@@ -39,39 +42,8 @@
 export default {
   data() {
     return {
-      phrases: ["an artist", "a designer", "a visionary"],
-      currentText: 0,
-      typedText: "",
-      time: 100,
+      typedText: ["an artist", "a designer", "a visionary"],
     };
-  },
-  computed: {
-    sleep() {
-      return (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-    },
-  },
-  methods: {
-    async writeLoop() {
-      while (true) {
-        let curWord = this.phrases[this.currentText];
-        console.log(curWord);
-        for (let i = 0; i < curWord.length; i++) {
-          this.typedText = curWord.substring(0, i + 1);
-          await this.sleep(this.time);
-        }
-        await this.sleep(this.time * 10);
-        for (let i = curWord.length; i > 0; i--) {
-          this.typedText = curWord.substring(0, i - 1);
-          await this.sleep(this.time);
-        }
-        await this.sleep(this.time * 5);
-
-        this.currentText = (this.currentText + 1) % this.phrases.length;
-      }
-    },
-  },
-  mounted() {
-    this.writeLoop();
   },
 };
 </script>

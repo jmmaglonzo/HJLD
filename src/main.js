@@ -7,6 +7,7 @@ import { Icon } from "@iconify/vue";
 import BaseButton from "@/components/base/BaseButton.vue";
 import BaseCard from "@/components/base/BaseCard.vue";
 import BaseGrid from "@/components/base/BaseGrid.vue";
+import VueWriter from "vue-writer";
 
 const app = createApp(App);
 app.component("Icon", Icon);
@@ -14,5 +15,6 @@ app.component("base-button", BaseButton);
 app.component("base-card", BaseCard);
 app.component("base-grid", BaseGrid);
 app.use(router);
+app.use(VueWriter);
 
 app.mount("#app");
