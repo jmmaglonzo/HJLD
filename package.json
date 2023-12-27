@@ -11,8 +11,7 @@
   "dependencies": {
     "@syncfusion/ej2-vue-navigations": "^24.1.41",
     "vue": "^3.3.11",
-    "vue-router": "^4.2.5",
-    "vue-writer": "^1.2.0"
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@iconify/vue": "^4.1.1",

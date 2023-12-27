@@ -5,18 +5,17 @@
         <img src="../assets/img/img-hero.png" alt="" />
       </div>
       <div class="md:order2 order-1 space-y-2 py-12 md:w-1/2">
-        <div class="text-center md:text-start">
-          <span class="text-2xl text-primary md:text-3xl">Hello</span>
+        <div class="flex items-center justify-center gap-2 md:justify-normal">
+          <span class="text-2xl font-bold uppercase text-accent md:text-3xl"
+            >i'm</span
+          >
+          <h1 class="text-3xl font-extrabold uppercase text-accent md:text-5xl">
+            {{ currentPhrase }}
+          </h1>
         </div>
-        <h1
-          class="text-center text-4xl font-extrabold uppercase text-accent md:text-left md:text-5xl"
-        >
-          I'M
-          {{ typedText }}
-        </h1>
 
         <p class="text-center text-base leading-relaxed md:text-start">
-          Welcome to my creative world where I wear multiple hats: artist,
+          Welcome to my creative world where I wear multiple hats as an artist,
           designer, and visionary. I blend artistic expression with innovative
           thinking to craft exceptional experiences and designs. Join me in
           exploring the extraordinary.
@@ -40,38 +39,45 @@ export default {
   data() {
     return {
       phrases: ["an artist", "a designer", "a visionary"],
-      currentText: 0,
-      typedText: "",
-      time: 100,
+      currentPhraseIndex: 0,
+      currentCharacterIndex: 0,
+      currentPhrase: "",
+      isDeleting: false,
     };
   },
-  computed: {
-    sleep() {
-      return (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-    },
+  mounted() {
+    this.loop();
   },
   methods: {
-    async writeLoop() {
-      while (true) {
-        let curWord = this.phrases[this.currentText];
-        console.log(curWord);
-        for (let i = 0; i < curWord.length; i++) {
-          this.typedText = curWord.substring(0, i + 1);
-          await this.sleep(this.time);
-        }
-        await this.sleep(this.time * 10);
-        for (let i = curWord.length; i > 0; i--) {
-          this.typedText = curWord.substring(0, i - 1);
-          await this.sleep(this.time);
-        }
-        await this.sleep(this.time * 5);
+    loop() {
+      const currentPhraseText = this.phrases[this.currentPhraseIndex];
 
-        this.currentText = (this.currentText + 1) % this.phrases.length;
+      if (!this.isDeleting) {
+        this.currentPhrase += currentPhraseText[this.currentCharacterIndex];
+        this.currentCharacterIndex++;
+      } else {
+        this.currentPhrase = this.currentPhrase.slice(0, -1);
+        this.currentCharacterIndex--;
       }
+
+      if (this.currentCharacterIndex === currentPhraseText.length) {
+        this.isDeleting = true;
+      }
+
+      if (this.currentCharacterIndex === 0) {
+        this.currentPhrase = "";
+        this.isDeleting = false;
+        this.currentPhraseIndex++;
+        if (this.currentPhraseIndex === this.phrases.length) {
+          this.currentPhraseIndex = 0;
+        }
+      }
+
+      const delSpeed = 100;
+      const typingSpeed = 230;
+      const time = this.isDeleting ? delSpeed : typingSpeed;
+      setTimeout(this.loop, time);
     },
-  },
-  mounted() {
-    this.writeLoop();
   },
 };
 </script>

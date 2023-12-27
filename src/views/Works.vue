@@ -1,5 +1,5 @@
 <template>
-  <section class="container flex flex-col items-center space-y-4">
+  <section class="container flex flex-col items-center space-y-4 p-2 md:p-0">
     <div class="grid grid-cols-2 gap-2 md:grid-cols-4">
       <base-button @click.prevent="setSelectedTab('AllWorks')"
         >show all</base-button
